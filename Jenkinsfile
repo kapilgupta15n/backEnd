@@ -4,7 +4,7 @@ pipeline{
     stage('docker build'){
 	  steps {	    
 	    sh 'echo ${BUILD_NUMBER}'
-	    sh docker build -t kapilgupta15n/backend:${BUILD_NUMBER}"
+	    sh "docker build --no-cache -t kapilgupta15n/backend:${BUILD_NUMBER} ."
 	  }
 	}
 	stage ('docker push'){
